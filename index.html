@@ -17,7 +17,6 @@
             --primary: #1e3a8a;
             --secondary: #2563eb;
             --accent: #0284c7;
-            --bg: #f1f5f9;
             --card-bg: #ffffff;
             --text: #0f172a;
             --highlight-bg: #e0f2fe;
@@ -26,7 +25,7 @@
 
         body {
             font-family: 'Cairo', sans-serif;
-            background-color: var(--bg);
+            background-color: #f8f9fa;
             color: var(--text);
             margin: 0;
             padding: 20px;
@@ -34,7 +33,8 @@
         }
 
         .container {
-            max-width: 950px;
+            width: 100%;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
@@ -261,7 +261,8 @@
 
         .action-button,
         .excel-link,
-        .template-btn {
+        .template-btn,
+        .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -286,7 +287,8 @@
 
         .action-button:hover,
         .excel-link:hover,
-        .template-btn:hover {
+        .template-btn:hover,
+        .btn:hover {
             background: var(--primary);
             color: #fff;
             transform: translateY(-1px);
@@ -295,13 +297,15 @@
 
         .action-button:active,
         .excel-link:active,
-        .template-btn:active {
+        .template-btn:active,
+        .btn:active {
             transform: translateY(0);
         }
 
         .action-button:focus-visible,
         .excel-link:focus-visible,
-        .template-btn:focus-visible {
+        .template-btn:focus-visible,
+        .btn:focus-visible {
             outline: 3px solid #7dd3fc;
             outline-offset: 3px;
         }
@@ -477,7 +481,9 @@
         }
 
         .status-icon {
-            font-size: 12px;
+            width: 40px;
+            text-align: center;
+            font-size: 1.1rem;
             line-height: 1;
         }
 
@@ -493,7 +499,219 @@
             user-select: none;
         }
 
+
+        /* Task card */
+        .task-card {
+            background: #fff;
+            border: 1px solid #e0ccff;
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-header,
+        .header-right,
+        .header-left,
+        .main-title,
+        .ticket-item,
+        .ticket-right,
+        .date-row {
+            display: flex;
+            align-items: center;
+        }
+
+        .card-header {
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding-bottom: 12px;
+        }
+
+        .header-right { gap: 12px; }
+        .header-left { gap: 10px; }
+
+        .avatar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #9c27b0;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .title-section {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .main-title {
+            flex-wrap: wrap;
+            gap: 8px;
+            color: #333;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .sub-title { color: #26c6da; font-size: 12px; }
+        .badge-purple { background: #7e57c2; }
+        .badge-red { background: #ff1744; }
+
+        .time-badge {
+            padding: 2px 6px;
+            border-radius: 10px;
+            background: #f0f0f0;
+            color: #888;
+            font-size: 11px;
+        }
+
+        .over-planned {
+            color: #f44336;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .btn-activate,
+        .btn-progress { background: var(--secondary); }
+
+        .btn-progress.is-done,
+        .btn-progress.is-done:hover,
+        .btn-activate.is-working,
+        .btn-activate.is-working:hover {
+            background: #16a34a;
+        }
+
+        .btn-more {
+            padding: 0 5px;
+            border: 0;
+            background: none;
+            color: #888;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .card-dates {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            padding: 12px 0;
+            border-top: 1px solid #f0f0f0;
+            color: #666;
+            font-size: 12px;
+        }
+
+        .date-row { gap: 8px; }
+        .date-label { min-width: 60px; font-weight: 500; }
+        .highlight { color: #333; font-weight: 500; }
+        .highlight-red { color: #f44336; font-weight: 500; }
+
+        .tickets-section {
+            padding-top: 10px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .tickets-label {
+            margin-bottom: 6px;
+            color: #999;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .ticket-item {
+            justify-content: space-between;
+            padding: 8px 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            background: #fafafa;
+        }
+
+        .ticket-right { gap: 8px; }
+        .ticket-text { color: #333; font-size: 13px; }
+
+        .status-done {
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: #e8f5e9;
+            color: #4caf50;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        .lesson-examples {
+            margin-top: 16px;
+        }
+
+        .lesson-section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            margin-bottom: 12px;
+            color: #1a1a1a;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .table-row {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            border-radius: 4px;
+            background: #1a2332;
+            color: #a0aec0;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+        }
+
+        .cell {
+            overflow: hidden;
+            padding: 0 8px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .id-cell { width: 60px; color: #4a5568; font-weight: 700; }
+        .title-cell { width: 200px; color: #edf2f7; }
+        .desc-cell { flex-grow: 1; min-width: 180px; }
+        .text-success { color: #2f855a; }
+        .text-danger { color: #c53030; }
+        .date-cell { width: 100px; text-align: center; }
+        .badge-cell { width: 110px; text-align: center; }
+        .term-cell { width: 100px; color: #718096; font-size: 0.85rem; text-align: left; }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-schedule { background: #2b6cb0; color: #ebf8ff; }
+        .badge-visible { background: #2f855a; color: #f0fff4; }
+
+        @media (max-width: 768px) {
+            .table-row {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .cell {
+                width: 100% !important;
+                text-align: right !important;
+            }
+        }
+
     </style>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -551,7 +769,7 @@
                             </strong>
                             يُفضل تخصص ساعات ما بعد البريك الخاص بيك عشان تكون فوّقت والقهوة بدأت تعمل مفعول.
                         </div>
-
+                    </div>
                 </details>
                 <details>
                     <summary>
@@ -655,12 +873,14 @@
                     <summary>
                         <span>
                             <span style="font-size: 24px; color: orange;">&#9888;</span> <span>رصد المشاكل من اسأل مدرس</span>
+                        </span>
                     </summary>
                     <div class="details-content">
                         <p><strong><span style="color: Red;">لما الطالب يقول لك: "التفسير مش ظاهر" أو "الـ AI بيصحح لي خطأ" أو "الPop-Up فيه مشكلة"</span></strong> هنا أنت لازم ترصدها تيكت على السايت أو تاخد Action وتعدّل من الBackend مش بتهندل الطالب وتسيب المشكلة زي ما هي.
                             <br><strong> 🤖 لو الـ AI إجابته خطأ:</strong>
                             <br> 🎯 بتراجع نموذج الإجابة من الباك إند
                             <br> 🎯 بتحول نموذج الإجابة من "regular" لـ "High" من الباك إند
+                        </p>
                     </div>
                 </details>
             </div>
@@ -687,8 +907,8 @@
                             <strong>سحب الداتا:</strong> بتبعت للمدرس في بداية الأسبوع لو ما ردش خلال يوم عمل كامل بتتصل بيه
                             <br><span style="color: blue;">⛔ لو المدرس بعت الداتا ناقصة حاجات بسيطة بتضيف النواقص من عندك وترفع الفايل وتبلغ المستر: "إحنا ضفنا ..... على الفايل عشان يستوفي كل المعلومات وبإذن الله خلال أيام الداتا هتكون جاهزة للتصوير 😊"
                                 <br><span style="color: Red;">⛔ الداتا ارفعها أول بأول؛ لأن أي داتا هتتأخر عندك = هيستلزم قرار إداري (خصم يوم)
-
                                 </span>
+                            </span>
                         </div>
                         <span class="team-tag">ECQ</span>
                     </li>
@@ -708,16 +928,46 @@
                         <span class="team-tag">ECQ</span>
                     </li>
 
-                    <div>
-                        <li class="step-item"><span class="step-number">10</span>
+                    <li class="step-item"><span class="step-number">10</span>
                             <div>
-                                رفع الفيديوهات على الباك
+                                رفع الفيديوهات على الباك                                                                                                                                                                                                                                                                                                                     <span class="team-tag">Operation</span>
+
                                 <br>
-                                <span style="color: Red;">⛔الأوبريشن ممكن يرفعوا الفيديوهات على الباك قبل ما تراجعها ولكنها بتكون "invisible" فمش معنى إن الفيديو على الباك يبقى الفيديو معروض للطالب </span>
+                                <span style="color: Red;">⛔الأوبريشن ممكن يرفعوا الفيديوهات على الباك قبل ما تراجعها ولكنها بتكون "SCHEDULE" فمش معنى إن الفيديو على الباك يبقى الفيديو معروض للطالب </span>
+                                    <div class="lesson-examples">
+                                      
+        <!-- الحالة الأولى: مجدولة وغير معروضة -->
+        <div class="lesson-section">
+            <h2 class="section-title">دي حصة موجودة على الباك بس مش معروضة للطالب (SCHEDULE) :</h2>
+            <div class="table-row">
+                <div class="cell id-cell">9570</div>
+                <div class="cell title-cell">First Month Revision</div>
+                <div class="cell desc-cell">First Month Revision</div>
+                <div class="cell status-icon text-success">✔</div>
+                <div class="cell date-cell">2026-10-18</div>
+                <div class="cell date-cell">—</div>
+                <div class="cell badge-cell"><span class="badge badge-schedule">SCHEDULE</span></div>
+                <div class="cell term-cell">FIRST_TERM</div>
+            </div>
+        </div>
+
+        <!-- الحالة الثانية: مرئية ومعروضة -->
+        <div class="lesson-section">
+            <h2 class="section-title">دي حصة موجودة على الباك ومعروضة للطالب (VISIBLE) :</h2>
+            <div class="table-row">
+                <div class="cell id-cell">9557</div>
+                <div class="cell title-cell">Lecture (6) - Lesson (4)</div>
+                <div class="cell desc-cell">Writing diary entry</div>
+                <div class="cell status-icon text-danger">✖</div>
+                <div class="cell date-cell">—</div>
+                <div class="cell date-cell">2026-10-07</div>
+                <div class="cell badge-cell"><span class="badge badge-visible">VISIBLE</span></div>
+                <div class="cell term-cell">FIRST_TERM</div>
+            </div>
+        </div>
+    </div>
                             </div>
-                            <span class="team-tag">Operation</span>
-                        </li>
-                    </div>
+                    </li>
                 </ul>
 
                 <hr style="border:0; border-top: 1px solid #e2e8f0; margin: 25px 0;">
@@ -1007,10 +1257,9 @@
                     <li class="step-item"><span class="step-number">3</span>   فضلًا نلتزم بـ   <!-- الزر والرابط المستهدف -->
     <a href="https://drive.google.com/drive/folders/1DQkqbnWDW5n8ggBvCIsaP0uLmogZWxfB" target="_blank" rel="noopener noreferrer" class="template-btn">
         التمبلت
-    </a></li> </li>
+    </a></li>
 
                 </ul>
-                <span style="color: Red;"> <strong> فضلًا ناخد بالنا من النقط دي منعًا لأي لخبطة </strong></span>
             </div>
         </details>
         <details>
@@ -1021,13 +1270,79 @@
           <div class="details-content">
 <strong> التيكيتات بقت بتتحدد بالـ category فيوميًا لازم يفتح <a class="action-button" href="https://tasks.elkheta.org/tickets" target="_blank" rel="noopener noreferrer">Tickets</a> </strong>
 عشان تحل التيكيتات المتعلقة بمادتك
+                <ul class="step-list">
                     <li class="step-item"><span class="step-number">🎫</span>
 لو لقيت Category مش موجود بلّغ وهنضيفه
                     </li>
                     <li class="step-item"><span class="step-number">🎫</span>
 يوميًا بتحل كل التيكيتات وتعملها DONE                     </li>
-   <li class="step-item"><span class="step-number">3</span>
-التاسك هيكون ليها 2 تايمر (واحد بيقول لك قدامك وقت إيه عشان تشوف التيكيت - وواحد بيقول لك قدامك وقت قد إيه عشان تحل التيكيت)        </details>
+   <li class="step-item"><span class="step-number">🎫</span>
+التاسك هيكون ليها 2 تايمر (واحد بيقول لك قدامك وقت إيه عشان تشوف التيكيت - وواحد بيقول لك قدامك وقت قد إيه عشان تحل التيكيت)
+                    </li>
+                    <li class="step-item"><span class="step-number">🎫</span>
+  
+    <div class="container">
+        <!-- النص الإرشادي العلوي -->
+        <strong>
+            لما التيكيت يترد عليها (هتظهر لك Verify) ما تنساش تحوّل (In Progress) إلى (DONE)
+        </strong>
+
+        <!-- بطاقة المهمة الرئيسية -->
+        <div class="task-card">
+            
+            <!-- السطر العلوي للبطاقة -->
+            <div class="card-header">
+                <div class="header-right">
+                    <div class="avatar">8</div>
+                    <div class="title-section">
+                        <div class="main-title">
+                            Reviewing Final Videos
+                            <span class="badge badge-purple">ACTIVE</span>
+                            <span class="badge badge-red">ISSUES RESOLVED - VERIFY</span>
+                            <span class="time-badge">2h</span>
+                        </div>
+                        <div class="sub-title">Educational Content Quality • ECQ Specialist</div>
+                    </div>
+                </div>
+                
+                <div class="header-left">
+                    <span class="over-planned">⚠️ Over Planned</span>
+                    <button class="btn btn-activate" type="button" data-toggle-activate aria-pressed="false">▶ ACTIVATE</button>
+                    <button class="btn btn-progress" type="button" data-toggle-status aria-pressed="false">In Progress</button>
+                    <button class="btn-more">⋮</button>
+                </div>
+            </div>
+
+            <!-- تفاصيل المواعيد (Planned / Actual) -->
+            <div class="card-dates">
+                <div class="date-row">
+                    <span class="date-label">📅 Planned:</span>
+                    <span class="date-value">Start: <span class="highlight">12 Oct 09:00</span> Due: <span class="highlight-red">12 Oct 11:00</span></span>
+                </div>
+                <div class="date-row">
+                    <span class="date-label">🕒 Actual:</span>
+                    <span class="date-value">Started: 12 Oct 09:38</span>
+                </div>
+            </div>
+
+            <!-- قسم التيكيت الداخلي -->
+            <div class="tickets-section">
+                <div class="tickets-label">TICKETS</div>
+                <div class="ticket-item">
+                    <div class="ticket-right">
+                        <input type="checkbox" checked disabled>
+                        <span class="ticket-text">مونتاج من 22:24 إلى 22:29 علشان المشرّف TK-2026-8148</span>
+                    </div>
+                    <span class="status-done">Done</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+                    </li>
+                </ul>
+
+ </details>
         <details>
             <summary>
                 <span>
@@ -1035,15 +1350,16 @@
             </summary>
           <div class="details-content">
 <strong> في حالة اتعمل لك DONE على تيكيت ولقيت طالب راجع لك بنفس المشكلة </strong>
+                <ul class="step-list">
                     <li class="step-item"><span class="step-number">1</span>
 خد اسكرين من شات الطالب                    </li>
                     <li class="step-item"><span class="step-number">2</span>
- اكتب كود التيكت اللي كنت فاتحها                     </li>
+ اكتب كود التيكت اللي كنت فاتحها، مثال: TK-2026-8148                  </li>
                     <li class="step-item"><span class="step-number">3</span>
  خد اسكرين من الفرونت والمشكلة ظاهرة (تاريخ اليوم يكون ظاهر فيها) </li>
              <li class="step-item"><span class="step-number">4</span>
-            بلغنا بالتيكت بعد رصد كل التفاصيل دي  </li>
-            
+            بلغنا بالتيكت بعد رصد كل التفاصيل دي</li>
+                </ul>
         </details>
     </div>
 </body>
