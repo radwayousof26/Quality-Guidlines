@@ -259,28 +259,51 @@
             border-radius: 4px;
         }
 
-        .excel-link {
+        .action-button,
+        .excel-link,
+        .template-btn {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 7px;
-            padding: 5px 12px;
-            border-radius: 6px;
-            background: #217346;
+            min-height: 40px;
+            padding: 8px 16px;
+            border: 0;
+            border-radius: 8px;
+            background: var(--secondary);
             color: #fff;
-            font-size: 0.9rem;
+            font: inherit;
+            font-size: 0.95rem;
             font-weight: 700;
+            line-height: 1.4;
+            text-align: center;
             text-decoration: none;
             vertical-align: middle;
-            transition: background-color 0.2s ease;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(37, 99, 235, 0.18);
+            transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .excel-link:hover {
-            background: #185c37;
+        .action-button:hover,
+        .excel-link:hover,
+        .template-btn:hover {
+            background: var(--primary);
+            color: #fff;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 9px rgba(30, 58, 138, 0.2);
         }
 
-        .excel-link:focus-visible {
-            outline: 3px solid #86efac;
-            outline-offset: 2px;
+        .action-button:active,
+        .excel-link:active,
+        .template-btn:active {
+            transform: translateY(0);
+        }
+
+        .action-button:focus-visible,
+        .excel-link:focus-visible,
+        .template-btn:focus-visible {
+            outline: 3px solid #7dd3fc;
+            outline-offset: 3px;
         }
 
         .excel-icon {
@@ -470,32 +493,6 @@
             user-select: none;
         }
 
-        .template-btn {
-            display: inline-block;
-            padding: 12px 24px;
-            font-size: 18px;
-            font-family: Arial, sans-serif;
-            font-weight: bold;
-            color: #ffffff;
-            background-color: #007bff;
-            /* لون أزرق مريح للعين */
-            text-decoration: none;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        /* تأثير عند تمرير الماوس فوق الزر */
-        .template-btn:hover {
-            background-color: #0056b3;
-            /* لون أزرق أغمق */
-            transform: translateY(-2px);
-        }
-
-        /* تأثير عند الضغط على الزر */
-        .template-btn:active {
-            transform: translateY(1px);
-        }
     </style>
 </head>
 
@@ -1004,11 +1001,11 @@
                         <span class="step-number">2</span>
                         <div>
                             الشييت هيتضاف فيه تعليق المدرس على الريبورت: (موافق - جدال ونقاش - رفض تام للأخطاء) <br>
-
+                            وهيتضاف فيه موعد رفع الريبورت ففضلًا نرفع الريبورتات أول بأول
                         </div>
                     </li>
                     <li class="step-item"><span class="step-number">3</span>   فضلًا نلتزم بـ   <!-- الزر والرابط المستهدف -->
-    <a href="https://drive.google.com/drive/folders/1DQkqbnWDW5n8ggBvCIsaP0uLmogZWxfB" target="_blank" class="template-btn">
+    <a href="https://drive.google.com/drive/folders/1DQkqbnWDW5n8ggBvCIsaP0uLmogZWxfB" target="_blank" rel="noopener noreferrer" class="template-btn">
         التمبلت
     </a></li> </li>
 
@@ -1022,9 +1019,7 @@
                     🎫 Tickites </span>
             </summary>
           <div class="details-content">
-<strong> التيكيتات بقت بتتحدد بالـ category فيوميًا لازم يفتح <a href="https://tasks.elkheta.org/tickets" target="_blank">
-    <button style="padding: 10px 20px; font-size: 16px; cursor: pointer;">Tickets</button>
-</a> </strong>
+<strong> التيكيتات بقت بتتحدد بالـ category فيوميًا لازم يفتح <a class="action-button" href="https://tasks.elkheta.org/tickets" target="_blank" rel="noopener noreferrer">Tickets</a> </strong>
 عشان تحل التيكيتات المتعلقة بمادتك
                     <li class="step-item"><span class="step-number">🎫</span>
 لو لقيت Category مش موجود بلّغ وهنضيفه
