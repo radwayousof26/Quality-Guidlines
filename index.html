@@ -292,6 +292,19 @@
             transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
         }
 
+        /* Thin black outline around white text on yellow buttons only */
+        .action-button,
+        .excel-link,
+        .template-btn,
+        .btn:not(.btn-activate):not(.btn-progress) {
+            -webkit-text-stroke: 0.35px #111111;
+            text-shadow:
+                0.35px 0 #111111,
+                -0.35px 0 #111111,
+                0 0.35px #111111,
+                0 -0.35px #111111;
+        }
+
         .action-button:hover,
         .excel-link:hover,
         .template-btn:hover,
